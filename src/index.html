@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>TIY Github Profile</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,62 +19,104 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 <section class="container">
-<section class="sidebar">  <!-- START sidebar -->
-  <img src="https://avatars1.githubusercontent.com/u/583231?v=3"></img>
-  <div class="username">
-    <h2>The Octocat</h2>
-    <h3>octocat</h3>
-  </div>
-  <div class="profile-info">
-    <ul>
-      <li class="company">
-        <span class="octicon octicon-organization"></span>
-        GitHub
-      </li>
-      <li class="location">
-        <span class="octicon octicon-location"></span>
-        San Francisco
-      </li>
-      <li class="email">
-        <span class="octicon octicon-mail"></span>
-        octocat@github.com
-      </li>
-      <li class="blog">
-      <span class="octicon octicon-link"></span>
-      http://www.github.com/blog
-      </li>
-      <li class="created_at">
-      <span class="octicon octicon-clock"></span>
-      Joined on Jan 25, 2011
-      </li>
-    </ul>
-  </div>
-  <section class="key-stats">
-    <div>
-      <h2>1.1k</h2>
-      <p>Followers</p>
+  <section class="sidebar">  <!-- START sidebar -->
+    <img src="https://avatars1.githubusercontent.com/u/583231?v=3"></img>
+    <div class="username">
+      <h2>{{name}}</h2>
+      <h3>{{login}}</h3>
     </div>
-    <div>
-      <h2>2</h2>
-      <p>Starred</p>
+    <div class="profile-info">
+      <ul>
+        <li class="company">
+          <span class="octicon octicon-organization"></span>
+          {{company}}
+        </li>
+        <li class="location">
+          <span class="octicon octicon-location"></span>
+            {{location}}
+        </li>
+        <li class="email">
+          <span class="octicon octicon-mail"></span>
+          {{email}}
+        </li>
+        <li class="blog">
+        <span class="octicon octicon-link"></span>
+        {{blog}}
+        </li>
+        <li class="created_at">
+        <span class="octicon octicon-clock"></span>
+        {{created_at}}
+        </li>
+      </ul>
     </div>
-    <div>
-      <h2>6</h2>
-      <p>Following</p>
-    </div>
-  </section> <!--END key-stats-->
-</section> <!-- END sidebar -->
-<section class="main">  <!-- START main section -->
-  <section></section> <!-- Subheader -->
-  <section></section> <!-- Popular Repos -->
-  <section></section> <!-- Public conrtributions -->
-  <section></section> <!-- Conrtribution activity -->
-</section>
-  <!-- END main section -->
-</section>
+    <section class="key-stats">
+      <div>
+        <h2>1.1k</h2>
+        <p>Followers</p>
+      </div>
+      <div>
+        <h2>2</h2>
+        <p>Starred</p>
+      </div>
+      <div>
+        <h2>6</h2>
+        <p>Following</p>
+      </div>
+    </section> <!--END key-stats-->
+  </section> <!-- END sidebar -->
+  <section class="main">  <!-- START main section -->
+    <nav>
+      <div class= "tabs octicon octicon-plus">Contributions</div><!-- Contributions Tab-->
+        <section><!-- Contributions -->
+          <p>CONTRIBUTATIONS!</p>
+        </section>
+      <div class= "tabs active octicon octicon-repo">Repositories</div><!-- Repositories Tab-->
+        <section class= "active"><!-- Repositories -->
+            <form>
+              <input placeholder="Find a repository..."></input>
+              <button>Search</button>
+              <p>All Sources Forks Mirrors</p>
+            </form>
+          <div  class="repo">
+            <h3>{{name}} {{git_url}}</h3>
+            <p> {{description}}</p>
+            <p>{{updated_at}}</p>
+            <p>{{language}}
+              <span class="octicon octicon-star">{{stargazers_count}}</span>
+              <span class="octicon octicon-git-branch">{{forks_count}}</span>
+            </p>
+          </div> <!--SpoonKnife-->
+          <div class="repo">
+            <h3>Hello World</h3>
+            <p> This your first repo!</p>
+            <p>Updated 4 hours ago</p>
+            <p>
+              <span class="octicon octicon-star">1,401</span>
+              <span class="octicon octicon-git-branch">1,112</span>
+            </p>
+          </div> <!--Hello World-->
+          <div class="repo">
+            <h3>octocat.github.io</h3>
+            <p> </p><!--Description-->
+            <p>Updated 4 days ago</p>
+            <p>CSS
+              <span class="octicon octicon-star">10</span>
+              <span class="octicon octicon-git-branch">18</span>
+            </p>
+          </div> <!--octocat.github.io-->
+        </section>
+      <div class= "tabs octicon octicon-rss">Public activity</div><!-- Public activity Tab-->
+        <section><!-- Public activity -->
+          <p>PUBLIC DISPLAYS!!!</p>
+        </section>
+      <button class="octicon octicon-person">Follow</button>
+      <button class="octicon octicon-stop"></button>
+    </nav> <!--Subheader-->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+  </section>  <!-- END main section -->
+        <script src="../bower_components/jquery/dist/"></script>
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
