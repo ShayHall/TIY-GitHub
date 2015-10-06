@@ -1,0 +1,23 @@
+{
+  "name": "TIY-GitHub",
+  "version": "0.0.2",
+  "homepage": "https://github.com/ShayHall/TIY-GitHub",
+  "authors": [
+    "Shay <shayhall@nccumc.org>"
+  ],
+  "description": "",
+  "main": "src/index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "jQuery#~2.1.4"
+  }
+}
