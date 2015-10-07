@@ -22,8 +22,9 @@
   <section class="sidebar">  <!-- START sidebar -->
     <img src="https://avatars1.githubusercontent.com/u/583231?v=3"></img>
     <div class="username">
-      <h2>{{name}}</h2>
-      <h3>{{login}}</h3>
+      <!-- <h2>{{name}}</h2> -->
+      <template id="username"><h2>{{name}}</h2></template>
+      <template id="login"><h3>{{login}}</h3></template>
     </div>
     <div class="profile-info">
       <ul>
@@ -79,7 +80,7 @@
             </form>
           <div  class="repo">
             <h3>{{name}} {{git_url}}</h3>
-            <p> {{description}}</p>
+            <p>{{description}}</p>
             <p>{{updated_at}}</p>
             <p>{{language}}
               <span class="octicon octicon-star">{{stargazers_count}}</span>
@@ -114,9 +115,8 @@
     </nav> <!--Subheader-->
 
   </section>  <!-- END main section -->
-        <script src="../bower_components/jquery/dist/"></script>
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/lodash/lodash.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
