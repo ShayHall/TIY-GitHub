@@ -7,16 +7,13 @@ jQuery.ajax("../apis/github/users/shayhall.json").then(function(data){
 });
 
 
-jQuery.getJSON("../apis/github/users/shayhall.json", function(data) {
-  console.log($('#username').html('<h2>' + data.name));
-  console.log($('#login').html('<h3>' + data.login));
+var info = jQuery.getJSON("../apis/github/users/shayhall.json", function(data) {
+  $('#username').html('<h2>' + data.name);
+  $('#login').html('<h2>' + data.login);
+  $('.company').html('<li>' + data.company);
+  $('.location').html('<li>' + data.location);
+  $('.email').html('<li>' + data.email);
 });
-
-
-
-
-var info = _.template("{{name}}");
-info("{}")
 
 
 
