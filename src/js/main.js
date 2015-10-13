@@ -1,6 +1,20 @@
-jQuery.ajax('../apis/github/users/octocat.json').then(function(data){
+// jQuery.ajax('../../apis/github/users/octocat.json').then(function(data){
+//  console.log(arguments);
+// });
+
+jQuery.ajax("../apis/github/users/shayhall.json").then(function(data){
  console.log(arguments);
 });
+
+
+var info = jQuery.getJSON("../apis/github/users/shayhall.json", function(data) {
+  $('#username').html('<h2>' + data.name);
+  $('#login').html('<h2>' + data.login);
+  $('.company').html('<li>' + data.company);
+  $('.location').html('<li>' + data.location);
+  $('.email').html('<li>' + data.email);
+});
+
 
 
 $(".tabs").click(function(){
