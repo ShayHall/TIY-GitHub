@@ -1,13 +1,22 @@
 
-@media (max-width: 601px) {
+@media (max-width: 30em) {
 
 .container {
     box-sizing: border-box;
     width: 100%;
     margin: 0 auto;
 }
-
-.sidebar {
+.mobile {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.tabs.mobile {
+  width: 98% * (1/2);
+  display: inline-block;
+}
+.profile {
   box-sizing: border-box;
   width: 90%;
   margin: 30px auto 0;

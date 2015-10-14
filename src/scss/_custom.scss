@@ -36,8 +36,10 @@
       display: block;
     }
 }
-
-.sidebar {
+.mobile {
+  display: none;
+}
+.profile {
   display: block;
   float: left;
   margin-top: 20px;
