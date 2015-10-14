@@ -10,7 +10,7 @@
 .sidebar {
   box-sizing: border-box;
   width: 90%;
-  margin: 0 auto;
+  margin: 30px auto 0;
   display: block;
   float: none;
   height: auto;
@@ -35,8 +35,8 @@
         }
         #login {
           color: #7F7F7F;
-          margin-top: -1ex;
-          font-size: .8em;
+          margin-top: -3ex;
+          font-size: .6em;
         }
     }
     .profile-info {
