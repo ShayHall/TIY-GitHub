@@ -18,13 +18,19 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-<section class="container">
-  <section class="sidebar">  <!-- START sidebar -->
+<main class="container">
+  <nav class="mobile">
+    <a href="#about" class="tabs mobile">About</a>
+    <a href="#repos" class="tabs mobile">Repositories</a>
+  </nav>
+  <section class="profile" id="about">  <!-- START sidebar -->
     <img src="https://avatars1.githubusercontent.com/u/583231?v=3"></img>
     <div class="username">
       <!-- <h2>{{name}}</h2> -->
-      <h2 id="username">{{name}}</h2></template>
-      <h3 id="login">{{login}}</h3>
+      <h2>
+        <big id="username"> {{name}}</big>
+        <small id="login">{{login}}<small>
+      </h2>
     </div>
     <div class="profile-info">
       <ul>
@@ -38,7 +44,7 @@
         </li>
         <li class="email">
           <span class="octicon octicon-mail"></span>
-          {{email}}
+          <span>{{email}}</span>
         </li>
         <li class="blog">
         <span class="octicon octicon-link"></span>
@@ -72,7 +78,7 @@
           <p>CONTRIBUTATIONS!</p>
         </section>
       <div class= "tabs active octicon octicon-repo">Repositories</div><!-- Repositories Tab-->
-        <section class= "active"><!-- Repositories -->
+        <section class= "repos active"><!-- Repositories -->
             <form>
               <input placeholder="Find a repository..."></input>
               <button>Search</button>
@@ -114,7 +120,7 @@
       <button class="octicon octicon-stop"></button>
     </nav> <!--Subheader-->
 
-  </section>  <!-- END main section -->
+  </main>  <!-- .container -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/lodash/lodash.js"></script>
         <script src="js/plugins.js"></script>
