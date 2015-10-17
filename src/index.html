@@ -18,20 +18,20 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+<header class="header"></header>
 <main class="container">
   <nav class="mobile">
     <a href="#about" class="tabs mobile">About</a>
-    <a href="#repos" class="tabs mobile">Repositories</a>
+    <a href="#repo" class="tabs mobile">Repositories</a>
   </nav>
-  <section class="profile" id="about">  <!-- START sidebar -->
+  <section id="about" class="profile active">  <!-- START profile -->
     <img src="https://avatars1.githubusercontent.com/u/583231?v=3"></img>
     <div class="username">
-      <!-- <h2>{{name}}</h2> -->
       <h2>
         <big id="username"> {{name}}</big>
         <small id="login">{{login}}<small>
       </h2>
-    </div>
+    </div><!--.username-->
     <div class="profile-info">
       <ul>
         <li class="company">
@@ -70,55 +70,64 @@
         <p>Following</p>
       </div>
     </section> <!--END key-stats-->
-  </section> <!-- END sidebar -->
+  </section> <!--.profile -->
   <section class="main">  <!-- START main section -->
-    <nav>
-      <div class= "tabs octicon octicon-plus">Contributions</div><!-- Contributions Tab-->
-        <section><!-- Contributions -->
-          <p>CONTRIBUTATIONS!</p>
-        </section>
-      <div class= "tabs active octicon octicon-repo">Repositories</div><!-- Repositories Tab-->
-        <section class= "repos active"><!-- Repositories -->
-            <form>
-              <input placeholder="Find a repository..."></input>
-              <button>Search</button>
-              <p>All Sources Forks Mirrors</p>
-            </form>
-          <div  class="repo">
-            <h3>{{name}} {{git_url}}</h3>
-            <p>{{description}}</p>
-            <p>{{updated_at}}</p>
-            <p>{{language}}
-              <span class="octicon octicon-star">{{stargazers_count}}</span>
-              <span class="octicon octicon-git-branch">{{forks_count}}</span>
-            </p>
-          </div> <!--SpoonKnife-->
-          <div class="repo">
-            <h3>Hello World</h3>
-            <p> This your first repo!</p>
-            <p>Updated 4 hours ago</p>
-            <p>
-              <span class="octicon octicon-star">1,401</span>
-              <span class="octicon octicon-git-branch">1,112</span>
-            </p>
-          </div> <!--Hello World-->
-          <div class="repo">
-            <h3>octocat.github.io</h3>
-            <p> </p><!--Description-->
-            <p>Updated 4 days ago</p>
-            <p>CSS
-              <span class="octicon octicon-star">10</span>
-              <span class="octicon octicon-git-branch">18</span>
-            </p>
-          </div> <!--octocat.github.io-->
-        </section>
-      <div class= "tabs octicon octicon-rss">Public activity</div><!-- Public activity Tab-->
-        <section><!-- Public activity -->
-          <p>PUBLIC DISPLAYS!!!</p>
-        </section>
+    <nav class="tabs">
+      <a href="#contributions" class="tabs octicon octicon-plus">Contributions</a><!-- Contributions Tab-->
+      <a href="#repo" class="tabs active octicon octicon-repo">Repositories</a><!-- Repositories Tab-->
+      <a href="#public-activity" class="tabs octicon octicon-rss">Public Activity</a><!-- Public Activity Tab-->
+    </nav>
+    <nav class="panels">
+      <section id="contributions" class= "contributions"><!-- Contributions -->
+        <p>CONTRIBUTATIONS!</p>
+      </section>
+      <section id="repo" class= "mobile repo active"><!-- Repositories -->
+        <div class="subheader">
+          <form>
+            <input placeholder="Find a repository..."></input>
+            <button>Search</button>
+          </form>
+          <nav>
+            <a href="#">All</a>
+            <a href="#">Sources</a>
+            <a href="#">Forks</a>
+            <a href="#">Mirrors</a>
+          </nav>
+        </div>
+        <div class="repo mobile active">
+          <h3>{{name}} {{git_url}}</h3>
+          <p>{{description}}</p>
+          <p>{{updated_at}}</p>
+          <p>{{language}}
+            <span class="octicon octicon-star">{{stargazers_count}}</span>
+            <span class="octicon octicon-git-branch">{{forks_count}}</span>
+          </p>
+        </div> <!--SpoonKnife-->
+        <div class="repo">
+          <h3>Hello World</h3>
+          <p> This your first repo!</p>
+          <p>Updated 4 hours ago</p>
+          <p>
+            <span class="octicon octicon-star">1,401</span>
+            <span class="octicon octicon-git-branch">1,112</span>
+          </p>
+        </div> <!--Hello World-->
+        <div class="repo">
+          <h3>octocat.github.io</h3>
+          <p> </p><!--Description-->
+          <p>Updated 4 days ago</p>
+          <p>CSS
+            <span class="octicon octicon-star">10</span>
+            <span class="octicon octicon-git-branch">18</span>
+          </p>
+        </div> <!--octocat.github.io-->
+      </section>
+      <section id="public-activity"><!-- Public activity -->
+        <p>PUBLIC DISPLAYS!!!</p>
+      </section>
       <button class="octicon octicon-person">Follow</button>
       <button class="octicon octicon-stop"></button>
-    </nav> <!--Subheader-->
+    </nav> <!--.panels-->
 
   </main>  <!-- .container -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
