@@ -1,86 +1,155 @@
-.container {
+header {
+  box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
-}
+  background-color:lighten(gray,25%) ;
+  padding-bottom: 3em;
+} // .header
+
+.profile {
+  height: 500px;
+  margin-top: 2em;
+  img {
+    width:85%;
+    border-radius: 5px;
+  }
+  .username {
+    width:90%;
+    border-bottom: 1px solid #BFBFBF;
+    h3 {
+      color: #7F7F7F;
+      margin-top: -15px;
+    }
+  } // .username
+  .profile-info {
+    box-sizing: border-box;
+    width:90%;
+    margin-left: -40px;
+    ul {
+      padding: -40px;
+      list-style: none;
+    }
+  } // .profile-info
+  .key-stats {
+    width:90%;
+    height: 100px;
+    border-top: 1px solid #BFBFBF;
+    border-bottom: 1px solid #BFBFBF;
+    div {
+      display:block;
+      float:left;
+      width:33%;
+      color: #7F7F7F;
+      text-align: center;
+      h2 {
+        color: #36B5DB;
+        margin-bottom: -10px;
+      }
+    }
+  } //.key-stats
+} // .profile
 
 .main {
-  box-sizing: border-box;
-  display: block;
-  float: left;
-  margin-top: 20px;
-  width: 70%;
   height: 600px;
   position: relative;
+  margin-top: 2em;
     .tabs {
-      width: 20%;
-      height: 30px;
-      padding: 10px 2px 2px 2px;
-      margin: 10px -3px -10px -3px;
-      position: relative;
-      border-bottom: 1px solid #7F7F7F;
-    }
-    .tabs.active {
-      border-top: 1px solid #7F7F7F;
-      border-right: 1px solid #7F7F7F;
-      border-left: 1px solid #7F7F7F;
-      border-bottom: 0;
-    }
-    section {
-      display: none;
-      position:absolute;
-      margin-top: 15px;
+      box-sizing: border-box;
       width: 100%;
-      height: 700px;
-    }
-    section.active {
+      height: 40px;
+      bottom: 10px;
       display: block;
-    }
-}
+      float: left;
+      border-bottom: 1px solid #ddd;
+      a[href] {
+        box-sizing:border-box;
+        width: 100% * (1/4);
+        margin: 0 auto;
+        padding: 16px 0;
+        display:block;
+        float:left;
+        text-decoration: none;
+        text-align:center;
+        color: gray;
+        border-top: 4px solid white;
+        font-size: 1.5em;
+        &.active {
+          border-top: 1px solid #ddd;
+          border-right: 1px solid #ddd;
+          border-left: 1px solid #ddd;
+          border-bottom: 1px solid white;
+          border-radius: 3px;
+          color: black;
+        }
+      } //a[href]
+      .octicon-person {
+        background-color: #60b044;
+        color: white;
+        border-radius: 5px;
+      }
+    } // .tabs
+    .panels {
+      section {
+        display: none;
+        &.active {
+          display: block;
+          margin-top: 15px;
+          width: 100%;
+          height: 700px;
+          div {
+            border-bottom: 1px solid #BFBFBF;
+            margin-top: 2em;
+            padding: 1em;
+          }
+        }
+        .subheader { // top div
+          box-sizing: border-box;
+          padding: 10px 0;
+          width: 100%;
+          display: inline-block;
+          form {
+            box-sizing: border-box;
+            width: 100% * (1/2);
+            margin: 0 auto;
+            display: block;
+            float:left;
+            input {
+              box-sizing: border-box;
+              width: 100% * (2/3);
+              padding: 5px;
+              border-radius: 5px;
+            }
+            button {
+              box-sizing: border-box;
+              width: 7em;
+              padding: 0.7em 0;
+              border-radius: 5px;
+              background-color: lightgray;
+            }
+          } // form
+          .filter {
+            box-sizing: border-box;
+            width: 100% * (1/2);
+            margin: 0 auto;
+            display: block;
+            float:right;
+            a[href] {
+              display: block;
+              float:right;
+              margin-left: 1.3em;
+              text-decoration: none;
+              vertical-align: middle;
+              margin-top: 1em;
+              font-size: 1.2em;
+              color: cornflowerblue;
+            }
+          } // .filter
+        } // .subheader
+      } // section
+    } // .panels
+  } // .main
+
+
 .mobile {
   display: none;
-}
-.profile {
-  display: block;
-  float: left;
-  margin-top: 20px;
-  width: 28%;
-  height: 500px;
-    img {
-      width:85%;
-      border-radius: 5px;
-    }
-    .username {
-      width:90%;
-      border-bottom: 1px solid #BFBFBF;
-        h3 {
-          color: #7F7F7F;
-          margin-top: -15px;
-        }
-    }
-    .profile-info {
-      box-sizing: border-box;
-      width:90%;
-      margin-left: -40px;
-        ul {
-          padding: -40px;
-          list-style: none;
-        }
-    }
-    .key-stats {
-      width:90%;
-      height: 100px;
-      border-top: 1px solid #BFBFBF;
-      border-bottom: 1px solid #BFBFBF;
-        div {
-          display:block;
-          float:left;
-          width:33%;
-          color: #7F7F7F;
-          text-align: center;
-            h2 {
-              color: #36B5DB;
-              margin-bottom: -10px;
-            }
-        }
-    }
 }
