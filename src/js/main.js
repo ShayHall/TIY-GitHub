@@ -32,4 +32,5 @@ var info = jQuery.getJSON("../apis/github/users/shayhall.json", function(data) {
   $('.email').html('<li>' + data.email);
   $('.blog').html('<li>' + data.blog);
   $('.created_at').html('<li>' + data.created_at);
+  $('avatar_url').html('<a>' + data.avatar_url);
 });

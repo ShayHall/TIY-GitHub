@@ -10,9 +10,8 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="img/octicons/octicons.css">
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -21,11 +20,11 @@
 <header class="header"></header>
 <main class="container">
   <nav class="mobile">
-    <a href="#about" class="tabs mobile">About</a>
+    <a href="#about" class="tabs mobile active">About</a>
     <a href="#repo" class="tabs mobile">Repositories</a>
   </nav>
   <section id="about" class="profile active">  <!-- START profile -->
-    <img src="https://avatars1.githubusercontent.com/u/583231?v=3"></img>
+    <img src='{{avatar_url}}'></img>
     <div class="username">
       <h2>
         <big id="username"> {{name}}</big>
@@ -73,9 +72,9 @@
   </section> <!--.profile -->
   <section class="main">  <!-- START main section -->
     <nav class="tabs">
-      <a href="#contributions" class="tabs octicon octicon-plus">Contributions</a><!-- Contributions Tab-->
-      <a href="#repo" class="tabs active octicon octicon-repo">Repositories</a><!-- Repositories Tab-->
-      <a href="#public-activity" class="tabs octicon octicon-rss">Public Activity</a><!-- Public Activity Tab-->
+      <a href="#contributions" class="tabs octicon octicon-plus"> Contributions</a><!-- Contributions Tab-->
+      <a href="#repo" class="tabs active octicon octicon-repo"> Repositories</a><!-- Repositories Tab-->
+      <a href="#public-activity" class="tabs octicon octicon-rss"> Public Activity</a><!-- Public Activity Tab-->
       <button class="octicon octicon-person">Follow</button>
       <button class="octicon octicon-stop"></button>
     </nav>
@@ -131,6 +130,7 @@
 
   </main>  <!-- .container -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
         <script src="../bower_components/lodash/lodash.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
