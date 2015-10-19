@@ -1,7 +1,7 @@
 {
   "name": "tiy-github",
 
-  "version": "0.0.6",
+  "version": "0.0.7",
 
   "description": "",
   "main": "index.js",
@@ -24,12 +24,19 @@
   "dependencies": {
     "chai": "^3.2.0",
     "mocha": "^2.3.2",
-    "start": "browser-sync start --server --directory --files='index.html'"
+    "start": "browser-sync start --server --directory --files='index.html, js/*.js, css/*.css'",
+    "sass": "node-sass src/scss/main.scss src/css/main.css -- --watch",
+    "install:bower": "bower install --save",
+    "postinstall:bower": "wiredep --src 'src/*.html'",
+    "postinstall": "bower install"
   },
   "devDependencies": {
-    "browser-sync": "^2.9.6",
     "chai": "^3.3.0",
     "mocha": "^2.3.3",
-    "node-sass": "^3.3.3"
+    "bower": "^1.5.3",
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "node-sass": "^3.3.3",
+    "wiredep": "^2.2.2"
   }
 }
