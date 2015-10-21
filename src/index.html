@@ -4,7 +4,7 @@
     <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>TIY Github Profile</title>
+      <title>{{user.name}} Github Profile</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -110,7 +110,7 @@
           <p>Updated at {{user.updated_at | date}}</p>
           <p>{{user.language}}
             <span class="octicon octicon-star">{{user.stargazers_count}}</span>
-            <span class="octicon octicon-git-branch">{{user.forks_count}}</span>
+            <span class="octicon octicon-git-branch">{{repo.forks_count}}</span>
           </p>
         </div> <!--Hello World-->
         <div class="repo">
@@ -122,11 +122,18 @@
             <span class="octicon octicon-git-branch">18</span>
           </p>
         </div> <!--octocat.github.io-->
+        <form>
+          <div>
+            <textarea placeholder="Leave a comment"></textarea>
+            <button> Comment </button>
+          </div>
+        </form>
       </section>
       <section id="public-activity"><!-- Public activity -->
         <p>PUBLIC DISPLAYS!!!</p>
       </section>
     </nav> <!--.panels-->
+
 
   </main>  <!-- .container -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
