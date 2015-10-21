@@ -43,24 +43,18 @@ angular.module('Github', [])
     .then(function(userInfo){
       $rootScope.user = userInfo.data;
     });
+  })
+
+  .run(function($http, $rootScope){
+    $http.get("../apis/github/users/shayhall/repos.json")
+    .then(function(repos){
+      $rootScope.shayhall = repos.data;
+    });
   });
 
-// ;(function(){
-//
-//   .run(function($http, $rootScope){
-//     $http.get("../apis/github/users/shayhall/repos.json")
-//     .then(function(repos){
-//       $rootScope.users.user = repos[0].data;
-//     });
-//   });
-})(); //IIFE
+  // .run(function($http, $rootScope){
+  //   $http.get("../apis/github/users/shayhall/activity.json")
+  //     .then(function(activity){
+  //       $rootScope.shayhall = activity.data;
 
-//
-//   .run(function($http, $rootScope){
-//     $http.get("../apis/github/users/shayhall/activity.json")
-//   .then(function(data){
-//
-//
-//   });
-//
-// });
+})(); //IIFE

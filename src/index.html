@@ -60,7 +60,7 @@
         <p>Followers</p>
       </div>
       <div>
-        <h2>{{user.starred}}</h2>
+        <h2>{{user.stargazers_count}}</h2>
         <p>Starred</p>
       </div>
       <div>
@@ -104,12 +104,12 @@
           </p>
         </div> <!--SpoonKnife-->
         <div class="repo">
-          <h3>Hello World</h3>
-          <p> This your first repo!</p>
-          <p>Updated 4 hours ago</p>
-          <p>
-            <span class="octicon octicon-star">1,401</span>
-            <span class="octicon octicon-git-branch">1,112</span>
+          <h3>{{user.name}} {{user.git_url}}</h3>
+          <p> {{user.description}}</p>
+          <p>Updated at {{user.updated_at | date}}</p>
+          <p>{{user.language}}
+            <span class="octicon octicon-star">{{user.stargazers_count}}</span>
+            <span class="octicon octicon-git-branch">{{user.forks_count}}</span>
           </p>
         </div> <!--Hello World-->
         <div class="repo">
