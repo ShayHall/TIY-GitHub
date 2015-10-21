@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="Github">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -11,7 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="img/octicons/octicons.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+        <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css"/>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -24,48 +24,47 @@
     <a href="#repo" class="tabs mobile">Repositories</a>
   </nav>
   <section id="about" class="profile active">  <!-- START profile -->
-    <img src='{{avatar_url}}'></img>
+    <img ng-src='{{user.avatar_url}}'></img>
     <div class="username">
       <h2>
-        <big id="username"> {{name}}</big>
-        <small id="login">{{login}}<small>
+        <big id="username">{{user.name}}</big> <br>
+        <small id="login">{{user.login}}<small>
       </h2>
     </div><!--.username-->
     <div class="profile-info">
       <ul>
-        <li class="company">
-          <span class="octicon octicon-organization"></span>
-          {{company}}
+        <li>
+          <span class="company octicon octicon-organization">{{user.company}}</span>
         </li>
         <li class="location">
           <span class="octicon octicon-location"></span>
-            {{location}}
+            {{user.location}}
         </li>
         <li class="email">
           <span class="octicon octicon-mail"></span>
-          <span>{{email}}</span>
+          <span>{{user.email}}</span>
         </li>
         <li class="blog">
         <span class="octicon octicon-link"></span>
-        {{blog}}
+        {{user.blog}}
         </li>
         <li class="created_at">
         <span class="octicon octicon-clock"></span>
-        {{created_at}}
+        {{user.created_at | date}}
         </li>
       </ul>
     </div>
     <section class="key-stats">
       <div>
-        <h2>1.1k</h2>
+        <h2>{{user.followers}}</h2>
         <p>Followers</p>
       </div>
       <div>
-        <h2>2</h2>
+        <h2>{{user.starred}}</h2>
         <p>Starred</p>
       </div>
       <div>
-        <h2>6</h2>
+        <h2>{{user.following}}</h2>
         <p>Following</p>
       </div>
     </section> <!--END key-stats-->
@@ -96,10 +95,10 @@
           </nav>
         </div>
         <div class="repo mobile active">
-          <h3>{{name}} {{git_url}}</h3>
-          <p>{{description}}</p>
-          <p>{{updated_at}}</p>
-          <p>{{language}}
+          <h3>{{repo.name}} {{repo.git_url}}</h3>
+          <p>{{repo.description}}</p>
+          <p>{{repo.updated_at}}</p>
+          <p>{{repo.language}}
             <span class="octicon octicon-star">{{stargazers_count}}</span>
             <span class="octicon octicon-git-branch">{{forks_count}}</span>
           </p>
