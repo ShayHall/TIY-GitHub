@@ -50,8 +50,14 @@ angular.module('Github', [])
     .then(function(repos){
       $rootScope.shayhall = repos.data;
     });
-  });
+  })
 
+  .run(function($http, $rootScope){
+    $http.get("../apis/github/comments/comments.json")
+    .then(function(feedback){
+      $rootScope.comments = feedback.data;
+    });
+  });
   // .run(function($http, $rootScope){
   //   $http.get("../apis/github/users/shayhall/activity.json")
   //     .then(function(activity){
