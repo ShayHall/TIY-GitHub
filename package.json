@@ -1,15 +1,12 @@
 {
   "name": "tiy-github",
-
   "version": "0.0.7",
-
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha js/tests.js",
     "start": "browser-sync start --server --directory --startPath='src/index.html' --files='index.html,js/*.js,css/*.css'",
     "sass": "node-sass --output-style expanded --output src/css/ src/scss/main.scss"
-
   },
   "repository": {
     "type": "git",
@@ -31,11 +28,11 @@
     "postinstall": "bower install"
   },
   "devDependencies": {
-    "chai": "^3.3.0",
-    "mocha": "^2.3.3",
-    "bower": "^1.5.3",
+    "bower": "^1.6.3",
     "browser-sync": "^2.9.11",
+    "chai": "^3.3.0",
     "gulp": "^3.9.0",
+    "mocha": "^2.3.3",
     "node-sass": "^3.3.3",
     "wiredep": "^2.2.2"
   }

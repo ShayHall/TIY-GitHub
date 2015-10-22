@@ -1,0 +1,34 @@
+.comments {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: none;
+  &-thumbnail {
+    width: 10%;
+    float:left;
+    border-radius: 2px;
+  }
+  &-container {
+    width: 100%;
+  }
+  &-posted {
+    background-color: lightgray;
+  }
+  &-commentator {
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10%;
+  display: block;
+  background-color: lightness(lightgray, 20%);
+  }
+  &-form {
+    background-color: white;
+  }
+}//.comments
+
+  textarea {
+    width: 95%;
+    height: 10ex;
+    margin: 2.5%;
+    background-color: lightgray;
+  }

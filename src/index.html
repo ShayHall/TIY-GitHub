@@ -1,148 +1,166 @@
+<!--COMP- http://demo.hackerthemes.com/tales/html-version/v2-1/index.html-->
 <!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TIY Github Profile</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html class="no-js" lang="" ng-app="Github">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{user.name}} Github Profile</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="img/octicons/octicons.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-<header class="header"></header>
-<main class="container">
-  <nav class="mobile">
-    <a href="#about" class="tabs mobile active">About</a>
-    <a href="#repo" class="tabs mobile">Repositories</a>
-  </nav>
-  <section id="about" class="profile active">  <!-- START profile -->
-    <img src='{{avatar_url}}'></img>
-    <div class="username">
-      <h2>
-        <big id="username"> {{name}}</big>
-        <small id="login">{{login}}<small>
-      </h2>
-    </div><!--.username-->
-    <div class="profile-info">
-      <ul>
-        <li class="company">
-          <span class="octicon octicon-organization"></span>
-          {{company}}
-        </li>
-        <li class="location">
-          <span class="octicon octicon-location"></span>
-            {{location}}
-        </li>
-        <li class="email">
-          <span class="octicon octicon-mail"></span>
-          <span>{{email}}</span>
-        </li>
-        <li class="blog">
-        <span class="octicon octicon-link"></span>
-        {{blog}}
-        </li>
-        <li class="created_at">
-        <span class="octicon octicon-clock"></span>
-        {{created_at}}
-        </li>
-      </ul>
-    </div>
-    <section class="key-stats">
-      <div>
-        <h2>1.1k</h2>
-        <p>Followers</p>
-      </div>
-      <div>
-        <h2>2</h2>
-        <p>Starred</p>
-      </div>
-      <div>
-        <h2>6</h2>
-        <p>Following</p>
-      </div>
-    </section> <!--END key-stats-->
-  </section> <!--.profile -->
-  <section class="main">  <!-- START main section -->
-    <nav class="tabs">
-      <a href="#contributions" class="tabs octicon octicon-plus"> Contributions</a><!-- Contributions Tab-->
-      <a href="#repo" class="tabs active octicon octicon-repo"> Repositories</a><!-- Repositories Tab-->
-      <a href="#public-activity" class="tabs octicon octicon-rss"> Public Activity</a><!-- Public Activity Tab-->
-      <button class="octicon octicon-person">Follow</button>
-      <button class="octicon octicon-stop"></button>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="img/octicons/octicons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css"/>
+  </head>
+  <body>
+      <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+  <header class="header"></header>
+  <main class="container">
+    <nav class="mobile">
+      <a href="#about" class="tabs mobile active">About</a>
+      <a href="#repo" class="tabs mobile">Repositories</a>
     </nav>
-    <nav class="panels">
-      <section id="contributions" class= "contributions"><!-- Contributions -->
-        <p>CONTRIBUTATIONS!</p>
-      </section>
-      <section id="repo" class= "mobile repo active"><!-- Repositories -->
-        <div class="subheader">
-          <form>
-            <input placeholder="Find a repository..."></input>
-            <button>Search</button>
-          </form>
-          <nav class="filter">
-            <a href="#">All</a>
-            <a href="#">Sources</a>
-            <a href="#">Forks</a>
-            <a href="#">Mirrors</a>
-          </nav>
+    <section id="about" class="profile active">  <!-- START profile -->
+      <img ng-src='{{user.avatar_url}}'></img>
+      <div class="username">
+        <h2>
+          <big id="username">{{user.name}}</big> <br>
+          <small id="login">{{user.login}}<small>
+        </h2>
+      </div><!--.username-->
+      <div class="profile-info">
+        <ul>
+          <li>
+            <span class="company octicon octicon-organization">{{user.company}}</span>
+          </li>
+          <li class="location">
+            <span class="octicon octicon-location"></span>
+              {{user.location}}
+          </li>
+          <li class="email">
+            <span class="octicon octicon-mail"></span>
+            <span>{{user.email}}</span>
+          </li>
+          <li class="blog">
+          <span class="octicon octicon-link"></span>
+          {{user.blog}}
+          </li>
+          <li class="created_at">
+          <span class="octicon octicon-clock"></span>
+          {{user.created_at | date}}
+          </li>
+        </ul>
+      </div>
+      <section class="key-stats">
+        <div>
+          <h2>{{user.followers}}</h2>
+          <p>Followers</p>
         </div>
-        <div class="repo mobile active">
-          <h3>{{name}} {{git_url}}</h3>
-          <p>{{description}}</p>
-          <p>{{updated_at}}</p>
-          <p>{{language}}
-            <span class="octicon octicon-star">{{stargazers_count}}</span>
-            <span class="octicon octicon-git-branch">{{forks_count}}</span>
-          </p>
-        </div> <!--SpoonKnife-->
-        <div class="repo">
-          <h3>Hello World</h3>
-          <p> This your first repo!</p>
-          <p>Updated 4 hours ago</p>
-          <p>
-            <span class="octicon octicon-star">1,401</span>
-            <span class="octicon octicon-git-branch">1,112</span>
-          </p>
-        </div> <!--Hello World-->
-        <div class="repo">
-          <h3>octocat.github.io</h3>
-          <p> </p><!--Description-->
-          <p>Updated 4 days ago</p>
-          <p>CSS
-            <span class="octicon octicon-star">10</span>
-            <span class="octicon octicon-git-branch">18</span>
-          </p>
-        </div> <!--octocat.github.io-->
-      </section>
-      <section id="public-activity"><!-- Public activity -->
-        <p>PUBLIC DISPLAYS!!!</p>
-      </section>
-    </nav> <!--.panels-->
+        <div>
+          <h2>{{user.stargazers_count}}</h2>
+          <p>Starred</p>
+        </div>
+        <div>
+          <h2>{{user.following}}</h2>
+          <p>Following</p>
+        </div>
+      </section> <!--END key-stats-->
+    </section> <!--.profile -->
 
-  </main>  <!-- .container -->
-        <script src="../bower_components/jquery/dist/jquery.js"></script>
-        <script src="../bower_components/angular/angular.js"></script>
-        <script src="../bower_components/lodash/lodash.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <section class="main">  <!-- START main section -->
+      <nav class="tabs">
+        <a href="#contributions" class="tabs octicon octicon-plus"> Contributions</a><!-- Contributions Tab-->
+        <a href="#repo" class="tabs active octicon octicon-repo"> Repositories</a><!-- Repositories Tab-->
+        <a href="#public-activity" class="tabs octicon octicon-rss"> Public Activity</a><!-- Public Activity Tab-->
+        <button class="octicon octicon-person">Follow</button>
+        <button class="octicon octicon-stop"></button>
+      </nav><!--.tabs-->
+      <nav class="panels">
+        <section id="contributions" class= "contributions"><!-- Contributions -->
+          <p>CONTRIBUTATIONS!</p>
+        </section>
+        <section id="repo" class= "mobile repo active"><!-- Repositories -->
+          <div class="subheader">
+            <form>
+              <input placeholder="Find a repository..."></input>
+              <button>Search</button>
+            </form>
+            <nav class="filter">
+              <a href="#">All</a>
+              <a href="#">Sources</a>
+              <a href="#">Forks</a>
+              <a href="#">Mirrors</a>
+            </nav>
+          </div>
+          <div class="repo mobile active">
+            <h3>{{repo.name}} {{repo.git_url}}</h3>
+            <p>{{repo.description}}</p>
+            <p>{{repo.updated_at}}</p>
+            <p>{{repo.language}}
+              <span class="octicon octicon-star">{{stargazers_count}}</span>
+              <span class="octicon octicon-git-branch">{{forks_count}}</span>
+            </p>
+          </div> <!--SpoonKnife-->
+          <div class="repo">
+            <h3>{{user.name}} {{user.git_url}}</h3>
+            <p> {{user.description}}</p>
+            <p>Updated at {{user.updated_at | date}}</p>
+            <p>{{user.language}}
+              <span class="octicon octicon-star">{{user.stargazers_count}}</span>
+              <span class="octicon octicon-git-branch">{{repo.forks_count}}</span>
+            </p>
+          </div> <!--Hello World-->
+          <div class="repo">
+            <h3>octocat.github.io</h3>
+            <p> </p><!--Description-->
+            <p>Updated 4 days ago</p>
+            <p>CSS
+              <span class="octicon octicon-star">10</span>
+              <span class="octicon octicon-git-branch">18</span>
+            </p>
+          </div> <!--octocat.github.io-->
+          <article class="comments" ng-repeat="comment in comments">
+            <img class="comments-thumbnail" ng-src='{{comment.user.avatar_url}}'/>
+            <div class="comments-container">
+              <div class="comments-posted">
+                <p class="comments-commentator"><strong>{{comment.user.login}}</strong> commented {{comment.updated_at | date}}</p>
+                <p>{{comment.body}}</p>
+              </div><!--.comments-posted-->
+            </div> <!--.comments-container-->
+          </article> <!--.comments-->
+          <div class="repo">
+              <img class="comments-thumbnail" ng-src='{{user.avatar_url}}'/>
+              <form class="comments-form">
+                <h3>Write</h3>
+                <textarea placeholder="Leave a comment"></textarea>
+                <button> Comment </button>
+              </form> <!--.comments-form-->
+          </div> <!--octocat.github.io-->
+        </section> <!--Repositories-->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+        <section id="public-activity"><!-- Public activity -->
+          <p>PUBLIC DISPLAYS!!!</p>
+        </section>
+      </nav> <!--.panels-->
+    </main>  <!-- .container -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/lodash/lodash.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+  </body>
 </html>
